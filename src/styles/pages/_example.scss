@@ -1,0 +1,112 @@
+// ============================================
+// Example Page Styles
+// ============================================
+
+@use '../variables' as *;
+@use '../mixins' as *;
+
+// Example page-specific styles
+.example-page {
+  @include section-padding;
+  
+  .hero-section {
+    @include flex-column-center;
+    text-align: center;
+    margin-bottom: $spacing-4xl;
+    
+    h1 {
+      @include heading-1;
+      margin-bottom: $spacing-lg;
+    }
+    
+    p {
+      @include body-large;
+      max-width: 600px;
+      margin-bottom: $spacing-xl;
+    }
+  }
+  
+  .features-grid {
+    @include grid-3;
+    margin-bottom: $spacing-4xl;
+  }
+  
+  .feature-card {
+    @include card-interactive;
+    text-align: center;
+    
+    .icon {
+      width: 60px;
+      height: 60px;
+      background-color: $primary-100;
+      border-radius: $border-radius-full;
+      @include flex-center;
+      margin: 0 auto $spacing-md;
+      color: $primary-600;
+      font-size: $font-size-2xl;
+    }
+    
+    h3 {
+      @include heading-4;
+      margin-bottom: $spacing-sm;
+    }
+    
+    p {
+      @include body-base;
+      color: $text-secondary;
+    }
+  }
+  
+  .cta-section {
+    @include flex-center;
+    flex-direction: column;
+    text-align: center;
+    
+    h2 {
+      @include heading-2;
+      margin-bottom: $spacing-md;
+    }
+    
+    p {
+      @include body-base;
+      margin-bottom: $spacing-xl;
+      color: $text-secondary;
+    }
+    
+    .button-group {
+      @include flex-center;
+      gap: $spacing-md;
+      
+      @include mobile {
+        flex-direction: column;
+        width: 100%;
+        
+        .btn {
+          width: 100%;
+        }
+      }
+    }
+  }
+}
+
+// Custom utility classes
+.text-gradient {
+  background: linear-gradient(135deg, $primary-500, $accent-500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glass-effect {
+  background: rgba($white, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba($white, 0.2);
+}
+
+.animate-fade-in {
+  @include fade-in;
+}
+
+.animate-slide-up {
+  @include slide-up;
+}
