@@ -132,13 +132,27 @@
       .supplierOffer {
         background: #fff1f0;
         border: 1px solid #fff1f0;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          top: 0;
+          right: 0;
+          width: 120px; 
+          height: 120px;
+          background: url("/images/logo-group.png") no-repeat top right;
+          background-size: contain;
+          opacity: 1; 
+          pointer-events: none; 
+        }
 
         span {
-          color: #D92D27;
+          color: #d92d27;
         }
 
         button {
-          background-color: #D92D27;
+          background-color: #d92d27;
           color: #fff;
           border: none;
           border-radius: 56px;

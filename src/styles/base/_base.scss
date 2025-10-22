@@ -35,7 +35,7 @@ body {
 
 // Headings
 h1, h2, h3, h4, h5, h6 {
-  margin: 0 0 $spacing-md 0;
+  margin: 0 ;
   font-weight: $font-weight-semibold;
   line-height: $line-height-tight;
   color: $text-primary;
@@ -189,3 +189,42 @@ hr {
 :focus-visible {
   @include focus-ring;
 }
+
+
+// Button Components
+.btn {
+  @include button-base;
+}
+
+.btn-primary {
+  @include button-primary;
+}
+
+.btn-secondary {
+  @include button-secondary;
+}
+
+.btn-outline {
+  @include button-outline;
+}
+
+.btn-ghost {
+  @include button-ghost;
+}
+
+// Button Sizes
+.btn-sm {
+  padding: $spacing-xs $spacing-sm;
+  font-size: $font-size-sm;
+}
+
+.btn-lg {
+  padding: $spacing-md $spacing-xl;
+  font-size: $font-size-lg;
+}
+
+.btn-xl {
+  padding: $spacing-lg $spacing-2xl;
+  font-size: $font-size-xl;
+}
+
