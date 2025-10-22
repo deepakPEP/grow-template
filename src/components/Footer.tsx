@@ -10,13 +10,19 @@ const Footer = () => {
         <div className="footer-details">
           <div className="footer-details--offers">
             <div className="supplierOffer">
-              <p>List your Company <br/><span>For Free</span></p>
-              
+              <p>
+                List your Company <br />
+                <span>For Free</span>
+              </p>
+
               <button>Join as Supplier</button>
             </div>
             <div className="buyerOffer">
-              <p>Looking to <br/><span>Source Products?</span></p>
-              
+              <p>
+                Looking to <br />
+                <span>Source Products?</span>
+              </p>
+
               <button>Post Buying Request</button>
             </div>
           </div>
@@ -45,68 +51,52 @@ const Footer = () => {
             </div>
             <div className="mb-3">
               <ul>
-                <h4 className="listHeading">Get you know Us</h4>
-                <li>About Pepagora</li>
-                <li>Leadership & Advisors</li>
-                <li>Impact at Pepagora</li>
-                <li>Innovation at Pepagora</li>
-                <li>Media & Press</li>
-                <li>Careers</li>
-                <li>Contact Us</li>
-              </ul>
-              <ul>
-                <h4 className="listHeading">Trust Center</h4>
-              </ul>
-              <ul>
-                <h4 className="listHeading">Blog</h4>
-                <li>Sales</li>
-                <li>Sourcing</li>
-                <li>Marketing</li>
-                <li>Product Updates</li>
+                <h4 className="listHeading">Industries</h4>
+                <li>Apparel & Fashion</li>
+                <li>Industrial Equipment & Machinery</li>
+                <li>Home & Lifestyle</li>
+                <li>Health & Personal Care</li>
+                <li>Construction & Real Estate</li>
+                <li>Electronics & Electrical</li>
+                <li>Automotive & Transport</li>
+                <li>Raw Materials & Chemicals</li>
+                <li>Sports & Entertainment</li>
+                <li>Tools & Hardware</li>
+                <li>Packaging & Printing</li>
+                <li>Office Supplies & Equipment</li>
+                <li>Service & Support</li>
               </ul>
             </div>
             <div className="mb-3">
               <ul>
-                <h4 className="listHeading">Get you know Us</h4>
-                <li>About Pepagora</li>
-                <li>Leadership & Advisors</li>
-                <li>Impact at Pepagora</li>
-                <li>Innovation at Pepagora</li>
-                <li>Media & Press</li>
-                <li>Careers</li>
-                <li>Contact Us</li>
+                <h4 className="listHeading">Business Tools</h4>
+                <li>Post Sell Offer</li>
+                <li>Create your Business Website</li>
+                <li>Manage Your Leads</li>
+                <li>Manage your Customers</li>
+                <li>Post a Buying Request (RFQ)</li>
+                <li>Get Instant Supplier Match</li>
+                <li>Become a Verified Member</li>
               </ul>
               <ul>
-                <h4 className="listHeading">Trust Center</h4>
-              </ul>
-              <ul>
-                <h4 className="listHeading">Blog</h4>
-                <li>Sales</li>
-                <li>Sourcing</li>
-                <li>Marketing</li>
-                <li>Product Updates</li>
+                <h4 className="listHeading">Partners</h4>
+                <li>Affiliate Program</li>
+                <li>Channel Partner </li>
               </ul>
             </div>
             <div className="mb-3">
               <ul>
                 <h4 className="listHeading">Pricing <span>Starting from 10$ per month</span></h4>
-                <li>About Pepagora</li>
-                <li>Leadership & Advisors</li>
-                <li>Impact at Pepagora</li>
-                <li>Innovation at Pepagora</li>
-                <li>Media & Press</li>
-                <li>Careers</li>
-                <li>Contact Us</li>
               </ul>
               <ul>
-                <h4 className="listHeading">Trust Center</h4>
-              </ul>
-              <ul>
-                <h4 className="listHeading">Blog</h4>
-                <li>Sales</li>
-                <li>Sourcing</li>
-                <li>Marketing</li>
-                <li>Product Updates</li>
+                <h4 className="listHeading">
+                  Help & Legal
+                </h4>
+                <li>Help Center</li>
+                <li>FAQ’s</li>
+                <li>Refund & Cancellation</li>
+                <li>Data Protection Guidelines</li>
+                <li>Terms & Privacy Policy</li>
               </ul>
             </div>
           </div>
