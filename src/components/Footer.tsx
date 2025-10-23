@@ -26,7 +26,7 @@ const Footer = () => {
               <button>Post Buying Request</button>
             </div>
           </div>
-          <div className="footer-details--lists grid grid-cols-4 gap-6 w-full">
+          <div className="footer-details--lists">
             <div className="mb-3">
               <ul>
                 <h4 className="listHeading">Get you know Us</h4>

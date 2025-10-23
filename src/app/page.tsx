@@ -1,6 +1,7 @@
-import Banner from "@/components/Banner";
+import HeroBanner from "@/components/heroBanner";
 import FeatureCard from "@/components/FeatureCard";
 import StatsSection from "@/components/StatsSection";
+import { Company } from "@/components";
 
 export default function Home() {
   const features = [
@@ -65,15 +66,9 @@ export default function Home() {
   return (
     <div className="min-h-screen">
       {/* Hero Banner */}
-      <Banner
-        title="Build the Future with GrowTemplate"
-        subtitle="Innovation Starts Here"
-        description="Transform your ideas into reality with our cutting-edge platform. Join thousands of businesses already growing with us."
-        primaryButtonText="Start Free Trial"
-        primaryButtonLink="/contact"
-        secondaryButtonText="View Products"
-        secondaryButtonLink="/products"
-      />
+      <HeroBanner />
+
+      <Company />
 
       {/* Features Section */}
       <section className="py-20 bg-white">
