@@ -141,86 +141,86 @@
   }
 
   // Arrow Styles
-  &__arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 4;
-    width: 60px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-    transition: all $transition-base;
-    padding: 90px 20px !important;
-
-    @media (min-width: $breakpoint-lg) {
-      box-shadow: $shadow-md;
-      padding: 120px 30px !important;
-    }
-
-    &::after {
-      content: "";
+    &__arrow {
       position: absolute;
       top: 50%;
-      left: 50%;
-      width: 20px;
-      height: 20px;
-      background-repeat: no-repeat;
-      background-size: contain;
-      background-position: center;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-    }
+      transform: translateY(-50%);
+      z-index: 4;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all $transition-base;
+      padding: 90px 20px !important;
 
-    &:hover {
-      background: $white;
-    }
+      @media (min-width: $breakpoint-lg) {
+        box-shadow: $shadow-md;
+        padding: 120px 30px !important;
+      }
 
-    &--prev {
-      // left: $spacing-xl;
       &::after {
-        background-image: url("/icons/arrow-left--black.svg"); // 🔹 your left arrow PNG
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 20px;
+        height: 20px;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
       }
-
-      @media (max-width: $breakpoint-md) {
-        left: $spacing-md;
-        width: 50px;
-        height: 50px;
-      }
-    }
-
-    &--next {
-      // right: $spacing-xl;
-      &::after {
-        background-image: url("/icons/arrow-right--black.svg"); // 🔹 your right arrow PNG
-      }
-
-      @media (max-width: $breakpoint-md) {
-        right: $spacing-md;
-        width: 50px;
-        height: 50px;
-      }
-    }
-
-    // Hide arrows on very small screens
-    @media (max-width: $breakpoint-sm) {
-      display: none;
-    }
-
-    // Slick arrow overrides
-    &.slick-disabled {
-      opacity: 0.5;
-      cursor: not-allowed;
 
       &:hover {
-        transform: translateY(-50%);
-        background: rgba($white, 0.9);
-        box-shadow: $shadow-md;
+        background: $white;
+      }
+
+      &--prev {
+        // left: $spacing-xl;
+        &::after {
+          background-image: url("/icons/arrow-left--black.svg"); // 🔹 your left arrow PNG
+        }
+
+        @media (max-width: $breakpoint-md) {
+          left: $spacing-md;
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      &--next {
+        // right: $spacing-xl;
+        &::after {
+          background-image: url("/icons/arrow-right--black.svg"); // 🔹 your right arrow PNG
+        }
+
+        @media (max-width: $breakpoint-md) {
+          right: $spacing-md;
+          width: 50px;
+          height: 50px;
+        }
+      }
+
+      // Hide arrows on very small screens
+      @media (max-width: $breakpoint-sm) {
+        display: none;
+      }
+
+      // Slick arrow overrides
+      &.slick-disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+
+        &:hover {
+          transform: translateY(-50%);
+          background: rgba($white, 0.9);
+          box-shadow: $shadow-md;
+        }
       }
     }
-  }
 }
 
 // Slick slider specific overrides
