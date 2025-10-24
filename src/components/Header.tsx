@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { useState } from "react";
 
 const Header = () => {
+  const [isOpen, setIsOpen] = useState(false);
   const navigation = [
     { name: "Home", href: "/" },
     { name: "Products", href: "/products" },
@@ -17,7 +19,7 @@ const Header = () => {
         <div className="container navbar">
           <div className="flex justify-between items-center">
             <div className="navbar-logo">
-              <div className="flex items-center">
+              <div className="navlogo flex items-center">
                 <Link href="/" className="flex items-center">
                   <Image
                     src="/images/logo.png"
@@ -28,7 +30,7 @@ const Header = () => {
                 </Link>
               </div>
 
-              <button className="flex items-center space-x-2">
+              <button className="navCategories flex items-center space-x-2">
                 <Image
                   src="/icons/menu-icon.svg"
                   alt="menu"
@@ -129,7 +131,7 @@ const Header = () => {
               </button>
 
               {/* App Menu */}
-              <button className=" cursor-pointer">
+              <button className="hidden md:block! cursor-pointer">
                 <Image
                   src="/icons/dot-menu.svg"
                   alt="Logo"
@@ -152,22 +154,58 @@ const Header = () => {
         <div className="navigationBar">
           <div className="container">
             <div className="flex justify-between items-center">
-              <div className="flex">
+              <div className="hidden md:flex!">
                 {navigation.map((item, index) => (
                   <Link
                     key={item.name}
                     href={item.href}
-                    className={` navigationBar-link 
-        ${index === 0 ? "rounded-l-[40px]" : ""} 
-        ${index === navigation.length - 1 ? "rounded-r-[40px]" : ""} 
-        ${index !== navigation.length - 1 ? "border-r border-black/40" : ""}`}
+                    className={`navigationBar-link px-6 py-2 font-medium text-gray-800 bg-white 
+              ${index === 0 ? "rounded-l-[40px]" : ""} 
+              ${index === navigation.length - 1 ? "rounded-r-[40px]" : ""} 
+              ${
+                index !== navigation.length - 1
+                  ? "border-r border-black/40"
+                  : ""
+              }`}
                   >
                     {item.name}
                   </Link>
                 ))}
               </div>
 
-              <Link className="btn-primary" href="/contact">Contact Us</Link>
+              {/* Mobile Navigation */}
+              <div className="md:hidden relative">
+                <button
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="flex items-center"
+                >
+                  <Image
+                    src="/icons/menu-icon.svg"
+                    alt="menu"
+                    width={20}
+                    height={20}
+                  />
+                </button>
+
+                {isOpen && (
+                  <div className="absolute left-0 mt-2 w-48 rounded-lg shadow-lg bg-white border border-gray-200">
+                    {navigation.map((item) => (
+                      <Link
+                        key={item.name}
+                        href={item.href}
+                        onClick={() => setIsOpen(false)}
+                        className="block px-4 py-2 text-gray-800 hover:bg-gray-100"
+                      >
+                        {item.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              <Link className="btn-primary" href="/contact">
+                Contact Us
+              </Link>
             </div>
           </div>
         </div>
