@@ -99,6 +99,7 @@
   border: none;
   position: absolute;
   width: 100%;
+  z-index: 9;
 
   @media (min-width: $breakpoint-md) {
     padding: 53px 30px;
