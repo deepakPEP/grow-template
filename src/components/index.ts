@@ -12,3 +12,4 @@ export { default as Clientele } from './clientele';
 export { default as Infrastructure } from './Infrastructure';
 export { default as ProductList } from './productList';
 export { default as SubBanner } from './subBanner';
+export { default as Accordion } from './accordion';
