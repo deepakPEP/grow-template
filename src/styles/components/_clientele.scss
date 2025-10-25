@@ -84,7 +84,11 @@
     transition: all $transition-base;
 
     @media (min-width: $breakpoint-lg) {
-      height: 120px;
+      height: 150px;
+    }
+
+    @media (min-width: $breakpoint-2xl) {
+      height: 204px;
     }
   }
 

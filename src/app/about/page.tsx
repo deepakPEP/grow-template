@@ -1,4 +1,5 @@
 import {
+  Accordion,
   Clientele,
   Company,
   Overview,
@@ -21,6 +22,8 @@ export default function About() {
       <Overview />
 
       <Whyus />
+
+      <Accordion />
 
       <Clientele />
 
