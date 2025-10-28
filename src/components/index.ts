@@ -17,3 +17,4 @@ export { default as Imagecontent } from './Imagecontent';
 export { default as VisionMission } from './visionMission';
 export { default as CompanyDetails } from './companyDetails';
 export { default as Certifications } from './certifications';
+export { default as ProductListing } from './productListing';
