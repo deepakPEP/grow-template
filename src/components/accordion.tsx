@@ -37,7 +37,7 @@ const defaultAccordionItems: AccordionItem[] = [
 
 const Accordion: React.FC<AccordionProps> = ({
   title = "Frequently asked questions",
-  description = "Find answers to the most commonly asked questions about our services, processes, and how we can help your business grow and succeed.",
+  description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse varius enim in eros elementum tristique. Duis cursus, mi quis viverra ",
   items = defaultAccordionItems,
   className = "",
   allowMultiple = false

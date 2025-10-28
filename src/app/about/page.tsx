@@ -1,10 +1,14 @@
 import {
   Accordion,
+  Certifications,
   Clientele,
   Company,
+  CompanyDetails,
+  Imagecontent,
   Overview,
   SubBanner,
   SupplierForm,
+  VisionMission,
   Whyus,
 } from "@/components";
 
@@ -21,7 +25,15 @@ export default function About() {
 
       <Overview />
 
+      <CompanyDetails />
+
+      <VisionMission />
+
       <Whyus />
+
+      <Imagecontent />
+
+      <Certifications />
 
       <Accordion />
 
