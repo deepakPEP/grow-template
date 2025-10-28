@@ -1,94 +1,116 @@
 // Import variables and mixins
-@use '../variables' as *;
-@use '../mixins' as *;
+@use "../variables" as *;
+@use "../mixins" as *;
 
 // Accordion Component Styles
 .accordion {
   width: 100%;
-  max-width: 1200px;
+  max-width: 1920px;
   margin: 0 auto;
-  padding: $spacing-2xl 0;
+  padding: 16px;
+
+  @media (min-width: $breakpoint-lg) {
+    padding: 112px 80px;
+  }
 
   &__content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: $spacing-3xl;
-    
-    @include desktop {
-      grid-template-columns: 1fr 1fr;
-      gap: $spacing-4xl;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    @media (min-width: $breakpoint-lg) {
+      gap: 32px;
+      flex-direction: row;
     }
   }
 
   &__intro {
     display: flex;
     flex-direction: column;
-    gap: $spacing-lg;
-    
-    @include desktop {
-      padding-right: $spacing-xl;
+    gap: 12px;
+
+    @media (min-width: $breakpoint-lg) {
+      flex: 0 40%;
     }
   }
 
   &__title {
-    @include heading-2;
+    font-size: 16px;
+    line-height: 133%;
+    font-family: $font-family-secondary;
     margin-bottom: 0;
     color: $text-primary;
-    font-weight: $font-weight-bold;
+    font-weight: $font-weight-medium;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 30px;
+    }
   }
 
   &__description {
-    @include body-large;
+    font-size: 12px;
+    line-height: 155%;
+    font-family: $font-family-primary;
     color: $text-secondary;
-    line-height: $line-height-relaxed;
+    font-weight: 450;
     margin: 0;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 18px;
+    }
   }
 
   &__items {
     display: flex;
     flex-direction: column;
     gap: 0;
+
+    @media (min-width: $breakpoint-lg) {
+      flex: 0 60%;
+    }
   }
 
   &__item {
     border-bottom: 1px solid $border-light;
-    
+
     &:first-child {
       border-top: 1px solid $border-light;
     }
   }
 
   &__trigger {
-    @include flex-between;
+    display: flex;
+    font-weight: 600;
     width: 100%;
-    padding: $spacing-lg 0;
+    font-family: $font-family-primary;
+
+          padding: 16px 0;
     background: none;
     border: none;
     cursor: pointer;
     text-align: left;
     transition: all $transition-base;
-    
+
+    @media (min-width: $breakpoint-md) {
+    padding: 30px 0;
+    }
+
     &:hover {
       .accordion__trigger-text {
         color: $text-primary;
       }
-      
+
       .accordion__icon {
         color: $text-primary;
       }
     }
-    
-    &:focus {
-      @include focus-ring;
-      outline-offset: 2px;
-    }
-    
+
     &--open {
       .accordion__trigger-text {
         color: $text-primary;
         font-weight: $font-weight-semibold;
       }
-      
+
       .accordion__icon {
         color: $text-primary;
       }
@@ -96,13 +118,19 @@
   }
 
   &__trigger-text {
-    @include heading-4;
+    font-size: 14px;
+    line-height: 150%;
+    font-family: $font-family-primary;
     color: $text-primary;
     font-weight: $font-weight-medium;
     transition: all $transition-base;
     margin: 0;
     flex: 1;
     padding-right: $spacing-md;
+
+    @media (min-width: $breakpoint-md) {
+      font-size: 20px;
+    }
   }
 
   &__trigger-icon {
@@ -119,7 +147,7 @@
     height: 100%;
     color: $text-secondary;
     transition: all $transition-base;
-    
+
     &--rotated {
       transform: rotate(45deg);
     }
@@ -129,7 +157,7 @@
     max-height: 0;
     overflow: hidden;
     transition: max-height $transition-slow ease-in-out;
-    
+
     &--open {
       max-height: 500px; // Adjust based on content needs
     }
@@ -140,7 +168,8 @@
   }
 
   &__content-text {
-    @include body-base;
+    font-size: 14px;
+    font-family: $font-family-primary;
     color: $text-secondary;
     line-height: $line-height-relaxed;
     margin: 0;
@@ -148,35 +177,35 @@
 }
 
 // Responsive adjustments
-@include mobile {
-  .accordion {
-    padding: $spacing-xl 0;
-    
-    &__content {
-      gap: $spacing-xl;
-    }
-    
-    &__title {
-      font-size: $font-size-3xl;
-    }
-    
-    &__trigger {
-      padding: $spacing-md 0;
-    }
-    
-    &__trigger-text {
-      font-size: $font-size-lg;
-    }
-  }
-}
+// @include mobile {
+//   .accordion {
+//     padding: $spacing-xl 0;
 
-@include tablet {
-  .accordion {
-    &__content {
-      gap: $spacing-2xl;
-    }
-  }
-}
+//     &__content {
+//       gap: $spacing-xl;
+//     }
+
+//     &__title {
+//       font-size: $font-size-3xl;
+//     }
+
+//     &__trigger {
+//       padding: $spacing-md 0;
+//     }
+
+//     &__trigger-text {
+//       font-size: $font-size-lg;
+//     }
+//   }
+// }
+
+// @include tablet {
+//   .accordion {
+//     &__content {
+//       gap: $spacing-2xl;
+//     }
+//   }
+// }
 
 // Animation improvements
 .accordion__content-wrapper {
@@ -202,12 +231,12 @@
     &__item {
       border-color: $text-primary;
     }
-    
+
     &__trigger-text,
     &__content-text {
       color: $text-primary;
     }
-    
+
     &__icon {
       color: $text-primary;
     }

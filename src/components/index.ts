@@ -13,3 +13,7 @@ export { default as Infrastructure } from './Infrastructure';
 export { default as ProductList } from './productList';
 export { default as SubBanner } from './subBanner';
 export { default as Accordion } from './accordion';
+export { default as Imagecontent } from './Imagecontent';
+export { default as VisionMission } from './visionMission';
+export { default as CompanyDetails } from './companyDetails';
+export { default as Certifications } from './certifications';
