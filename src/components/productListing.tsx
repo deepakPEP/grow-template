@@ -24,7 +24,8 @@ const ProductListing: React.FC<ProductListingProps> = ({ className = "" }) => {
   const [viewMode, setViewMode] = useState<"list" | "grid">("list");
   const [displayCount, setDisplayCount] = useState(10);
   const [showMobileFilter, setShowMobileFilter] = useState(false);
-  const [selectedFilterCategory, setSelectedFilterCategory] = useState("Group Category 1");
+  const [selectedFilterCategory, setSelectedFilterCategory] =
+    useState("Group Category 1");
 
   const categoryNames = [
     "Group Category 1",
@@ -36,21 +37,171 @@ const ProductListing: React.FC<ProductListingProps> = ({ className = "" }) => {
   ];
 
   const allProducts: Product[] = [
-    { id: 1, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: true, image: "/images/product-placeholder.png", group: "Group Category 1" },
-    { id: 2, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: false, image: "/images/product-placeholder.png", group: "Group Category 1" },
-    { id: 3, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: true, image: "/images/product-placeholder.png", group: "Group Category 2" },
-    { id: 4, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: false, image: "/images/product-placeholder.png", group: "Group Category 2" },
-    { id: 5, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: false, image: "/images/product-placeholder.png", group: "Group Category 3" },
-    { id: 6, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: true, image: "/images/product-placeholder.png", group: "Group Category 3" },
-    { id: 7, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: false, image: "/images/product-placeholder.png", group: "Group Category 4" },
-    { id: 8, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: false, image: "/images/product-placeholder.png", group: "Group Category 4" },
-    { id: 9, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: false, image: "/images/product-placeholder.png", group: "Group Category 5" },
-    { id: 10, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: true, image: "/images/product-placeholder.png", group: "Group Category 5" },
-    { id: 11, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: false, image: "/images/product-placeholder.png", group: "Other Products" },
-    { id: 12, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: false, image: "/images/product-placeholder.png", group: "Other Products" },
-    { id: 13, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: false, image: "/images/product-placeholder.png", group: "Group Category 1" },
-    { id: 14, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: false, image: "/images/product-placeholder.png", group: "Group Category 2" },
-    { id: 15, name: "Detailed product name goes here", price: "$170.35 - 256.75", minOrder: "Min. order: 100 (Pieces)", availability: "Available", shipsIn: "Ships in 7 days", isNewlyAdded: true, image: "/images/product-placeholder.png", group: "Group Category 3" },
+    {
+      id: 1,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: true,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 1",
+    },
+    {
+      id: 2,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: false,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 1",
+    },
+    {
+      id: 3,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: true,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 2",
+    },
+    {
+      id: 4,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: false,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 2",
+    },
+    {
+      id: 5,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: false,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 3",
+    },
+    {
+      id: 6,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: true,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 3",
+    },
+    {
+      id: 7,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: false,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 4",
+    },
+    {
+      id: 8,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: false,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 4",
+    },
+    {
+      id: 9,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: false,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 5",
+    },
+    {
+      id: 10,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: true,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 5",
+    },
+    {
+      id: 11,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: false,
+      image: "/images/product-placeholder.png",
+      group: "Other Products",
+    },
+    {
+      id: 12,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: false,
+      image: "/images/product-placeholder.png",
+      group: "Other Products",
+    },
+    {
+      id: 13,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: false,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 1",
+    },
+    {
+      id: 14,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: false,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 2",
+    },
+    {
+      id: 15,
+      name: "Detailed product name goes here",
+      price: "$170.35 - 256.75",
+      minOrder: "Min. order: 100 (Pieces)",
+      availability: "Available",
+      shipsIn: "Ships in 7 days",
+      isNewlyAdded: true,
+      image: "/images/product-placeholder.png",
+      group: "Group Category 3",
+    },
   ];
 
   // Derive category counts dynamically from products
@@ -60,7 +211,9 @@ const ProductListing: React.FC<ProductListingProps> = ({ className = "" }) => {
     active: name === activeCategory,
   }));
 
-  const filteredProducts = allProducts.filter((p) => p.group === activeCategory);
+  const filteredProducts = allProducts.filter(
+    (p) => p.group === activeCategory
+  );
   const displayedProducts = filteredProducts.slice(0, displayCount);
   const hasMoreProducts = displayCount < filteredProducts.length;
 
@@ -102,18 +255,13 @@ const ProductListing: React.FC<ProductListingProps> = ({ className = "" }) => {
           onClick={handleMobileFilterOpen}
           aria-label="Filter"
         >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <line x1="4" y1="6" x2="20" y2="6" stroke="currentColor" strokeWidth="2" />
-            <circle cx="9" cy="6" r="2" fill="currentColor" />
-            <line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" strokeWidth="2" />
-            <circle cx="15" cy="12" r="2" fill="currentColor" />
-          </svg>
+          <Image
+            src="/icons/adjustments.svg"
+            alt="filter icon"
+            width={24}
+            height={24}
+            className="filter-icons"
+          />
         </button>
         <div className="product-listing__mobile-category-input">
           <button
@@ -125,47 +273,44 @@ const ProductListing: React.FC<ProductListingProps> = ({ className = "" }) => {
           >
             ✕
           </button>
-          <span className="product-listing__mobile-category-text">{activeCategory}</span>
+          <span className="product-listing__mobile-category-text">
+            {activeCategory}
+          </span>
         </div>
         <div className="product-listing__mobile-view-toggle">
           <button
             className={`product-listing__mobile-toggle-btn ${
-              viewMode === "grid" ? "product-listing__mobile-toggle-btn--active" : ""
+              viewMode === "grid"
+                ? "product-listing__mobile-toggle-btn--active"
+                : ""
             }`}
             onClick={() => setViewMode("grid")}
             aria-label="Grid view"
           >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5" />
-              <rect x="11" y="2" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5" />
-              <rect x="2" y="11" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5" />
-              <rect x="11" y="11" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5" />
-            </svg>
+            <Image
+              src="/icons/view-grid.svg"
+              alt="view grid icon"
+              width={28}
+              height={28}
+              className="grid-icons"
+            />
           </button>
           <button
             className={`product-listing__mobile-toggle-btn ${
-              viewMode === "list" ? "product-listing__mobile-toggle-btn--active" : ""
+              viewMode === "list"
+                ? "product-listing__mobile-toggle-btn--active"
+                : ""
             }`}
             onClick={() => setViewMode("list")}
             aria-label="List view"
           >
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 20 20"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <line x1="2" y1="5" x2="18" y2="5" stroke="currentColor" strokeWidth="2" />
-              <line x1="2" y1="10" x2="18" y2="10" stroke="currentColor" strokeWidth="2" />
-              <line x1="2" y1="15" x2="18" y2="15" stroke="currentColor" strokeWidth="2" />
-            </svg>
+            <Image
+              src="/icons/view-list.svg"
+              alt="view list icon"
+              width={28}
+              height={28}
+              className="list-icons"
+            />
           </button>
         </div>
       </div>
@@ -203,42 +348,37 @@ const ProductListing: React.FC<ProductListingProps> = ({ className = "" }) => {
               <div className="product-listing__view-toggle">
                 <button
                   className={`product-listing__toggle-btn ${
-                    viewMode === "grid" ? "product-listing__toggle-btn--active" : ""
+                    viewMode === "grid"
+                      ? "product-listing__toggle-btn--active"
+                      : ""
                   }`}
                   onClick={() => setViewMode("grid")}
                   aria-label="Grid view"
                 >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <rect x="2" y="2" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5" />
-                    <rect x="11" y="2" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5" />
-                    <rect x="2" y="11" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5" />
-                    <rect x="11" y="11" width="7" height="7" rx="1" stroke="currentColor" strokeWidth="1.5" />
-                  </svg>
+                  <Image
+                    src="/icons/view-grid.svg"
+                    alt="view grid icon"
+                    width={28}
+                    height={28}
+                    className="grid-icons"
+                  />
                 </button>
                 <button
                   className={`product-listing__toggle-btn ${
-                    viewMode === "list" ? "product-listing__toggle-btn--active" : ""
+                    viewMode === "list"
+                      ? "product-listing__toggle-btn--active"
+                      : ""
                   }`}
                   onClick={() => setViewMode("list")}
                   aria-label="List view"
                 >
-                  <svg
-                    width="20"
-                    height="20"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <line x1="2" y1="5" x2="18" y2="5" stroke="currentColor" strokeWidth="2" />
-                    <line x1="2" y1="10" x2="18" y2="10" stroke="currentColor" strokeWidth="2" />
-                    <line x1="2" y1="15" x2="18" y2="15" stroke="currentColor" strokeWidth="2" />
-                  </svg>
+                  <Image
+                    src="/icons/view-list.svg"
+                    alt="view list icon"
+                    width={28}
+                    height={28}
+                    className="list-icons"
+                  />
                 </button>
               </div>
             </div>
@@ -255,7 +395,9 @@ const ProductListing: React.FC<ProductListingProps> = ({ className = "" }) => {
                 <div key={product.id} className="product-listing__item">
                   <div className="product-listing__item-image">
                     {product.isNewlyAdded && (
-                      <span className="product-listing__badge">Newly added</span>
+                      <span className="product-listing__badge">
+                        Newly added
+                      </span>
                     )}
                     <Image
                       src={product.image}
@@ -265,20 +407,39 @@ const ProductListing: React.FC<ProductListingProps> = ({ className = "" }) => {
                       className="product-listing__item-img"
                     />
                   </div>
-                  <div className="product-listing__item-details">
-                    <h3 className="product-listing__item-name">{product.name}</h3>
-                    <p className="product-listing__item-price">{product.price}</p>
-                    <p className="product-listing__item-info">{product.minOrder}</p>
-                    <p className="product-listing__item-info">{product.availability}</p>
-                    <p className="product-listing__item-info">{product.shipsIn}</p>
-                  </div>
-                  <div className="product-listing__item-actions">
-                    <button className="product-listing__btn product-listing__btn--chat">
-                      Chat Now
-                    </button>
-                    <button className="product-listing__btn product-listing__btn--enquiry">
-                      Send Enquiry
-                    </button>
+                  <div className="product-listing__item-content">
+                    <div className="product-listing__item-details">
+                      <h3 className="product-listing__item-name">
+                        {product.name}
+                      </h3>
+                      <div className="product-listing__item-meta">
+                        <p className="product-listing__item-price">
+                          {product.price}
+                        </p>
+                        <p className="product-listing__item-info">
+                          {product.minOrder}
+                        </p>
+                        <p className="product-listing__item-info">
+                          <span className="available">
+                            {product.availability}
+                          </span>
+                          <span className="product-listing__item-shipping">
+                            <Image
+                              src="/icons/truck.svg"
+                              alt="truck icon"
+                              width={16}
+                              height={16}
+                              className="bg-image"
+                            />
+                            {product.shipsIn}
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                    <div className="product-listing__item-actions">
+                      <button className="btn btn-outline">Chat Now</button>
+                      <button className="btn btn-primary">Send Enquiry</button>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -301,17 +462,31 @@ const ProductListing: React.FC<ProductListingProps> = ({ className = "" }) => {
 
       {/* Mobile Filter Bottom Sheet */}
       {showMobileFilter && (
-        <div className="product-listing__bottom-sheet" role="dialog" aria-modal="true">
-          <div className="product-listing__bottom-sheet-backdrop" onClick={handleMobileFilterClose}></div>
+        <div
+          className="product-listing__bottom-sheet"
+          role="dialog"
+          aria-modal="true"
+        >
+          <div
+            className="product-listing__bottom-sheet-backdrop"
+            onClick={handleMobileFilterClose}
+          ></div>
           <div className="product-listing__bottom-sheet-panel">
             <div className="product-listing__bottom-sheet-header">
               <h3 className="product-listing__bottom-sheet-title">Filter</h3>
-              <button className="product-listing__clear-all" onClick={handleClearAll}>Clear all</button>
+              <button
+                className="product-listing__clear-all"
+                onClick={handleClearAll}
+              >
+                Clear all
+              </button>
             </div>
 
             <div className="product-listing__bottom-sheet-content">
               <div className="product-listing__bottom-sheet-group">
-                <span className="product-listing__bottom-sheet-group-title">Groups</span>
+                <span className="product-listing__bottom-sheet-group-title">
+                  Groups
+                </span>
                 <ul className="product-listing__radio-list">
                   {categories.map((c) => (
                     <li key={c.name} className="product-listing__radio-item">
@@ -321,10 +496,18 @@ const ProductListing: React.FC<ProductListingProps> = ({ className = "" }) => {
                           name="mobile-group"
                           value={c.name}
                           checked={selectedFilterCategory === c.name}
-                          onChange={(e) => setSelectedFilterCategory(e.target.value)}
+                          onChange={(e) =>
+                            setSelectedFilterCategory(e.target.value)
+                          }
                         />
-                        <span className="product-listing__radio-text">{c.name}</span>
-                        {c.count > 0 && <span className="product-listing__radio-count">{c.count}</span>}
+                        <span className="product-listing__radio-text">
+                          {c.name}
+                        </span>
+                        {c.count > 0 && (
+                          <span className="product-listing__radio-count">
+                            {c.count}
+                          </span>
+                        )}
                       </label>
                     </li>
                   ))}
@@ -333,8 +516,18 @@ const ProductListing: React.FC<ProductListingProps> = ({ className = "" }) => {
             </div>
 
             <div className="product-listing__bottom-sheet-actions">
-              <button className="product-listing__action-btn product-listing__action-btn--secondary" onClick={handleMobileFilterClose}>Cancel</button>
-              <button className="product-listing__action-btn product-listing__action-btn--primary" onClick={handleMobileFilterApply}>Okay</button>
+              <button
+                className="product-listing__action-btn product-listing__action-btn--secondary"
+                onClick={handleMobileFilterClose}
+              >
+                Cancel
+              </button>
+              <button
+                className="product-listing__action-btn product-listing__action-btn--primary"
+                onClick={handleMobileFilterApply}
+              >
+                Okay
+              </button>
             </div>
           </div>
         </div>
