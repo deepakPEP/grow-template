@@ -317,7 +317,7 @@ const CompanyDetails: React.FC<CompanyDetailsProps> = ({ className = "" }) => {
         </div>
         <div className="company-details__button-wrapper">
           <button
-            className="btn btn--secondary company-details__toggle-button"
+            className="btn-outline"
             onClick={() => setShowAll(!showAll)}
           >
             {showAll ? "Show less" : "Show more"}

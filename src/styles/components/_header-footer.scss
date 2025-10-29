@@ -377,6 +377,10 @@
           flex-direction: row;
           gap: 8px;
 
+          @media (min-width: $breakpoint-lg) {
+            width: 460px;
+          }
+
           input {
             padding: 8px 12px;
             border: 1px solid #cccccc;
