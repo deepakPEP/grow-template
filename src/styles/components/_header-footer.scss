@@ -109,6 +109,12 @@
     padding: 33px 72px 0 92px;
   }
 
+  .navitem-main{
+    border: 1px solid rgba(0, 0, 0, .1);
+    box-shadow: 0 3px 3px 0 rgba(0, 0, 0, .1);
+    border-radius: 40px;
+  }
+
   &-link {
     background-color: #fff;
     padding: 8px 40px;

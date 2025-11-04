@@ -64,7 +64,7 @@ const HeroBanner: React.FC<HeroBannerProps> = ({ className = '' }) => {
             </div>
             <div className="hero-banner__content">
               <div className="hero-banner__text-container">
-                <h1 className="hero-banner__title">{slide.title}</h1>
+                <h1 className="hero-banner__title line-clamp-3 leading-[calc(1em+4px)]">{slide.title}</h1>
                 <p className="hero-banner__description">{slide.description}</p>
               </div>
             </div>
